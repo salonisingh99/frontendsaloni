@@ -9,15 +9,16 @@ NavBtnLink,
 } from './navbarElements';
 
 const Navbar = () => {
-	const onClick = () =>{
-		localStorage.removeItem("user")
-		window.location.href = "./sign-in ";
-	}
+const onClick = () =>{
+	localStorage.removeItem("user")
+	window.location.href = "./ ";
+}
+const role= JSON.parse(window.localStorage.getItem("user"))?.role;
 return (
 	<>
 	<Nav>
 		<NavMenu>
-		<NavLink to='/' activeStyle>
+		<NavLink to={role == "Student" ? "/student-dashboard":"/alumini-dashboard"} activeStyle>
 			Dashboard
 		</NavLink>
 		<NavLink to='/profile' activeStyle>

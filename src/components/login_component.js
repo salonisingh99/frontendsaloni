@@ -40,7 +40,12 @@ export default class Login extends Component {
             role:data.data.role,
           }
           window.localStorage.setItem("user", JSON.stringify(user));
-          window.location.href = "./";
+          if(user.role == "Student"){
+            window.location.href = "./profile";
+          }
+          if(user.role == "Alumini"){
+            window.location.href = "./profile";
+          }
         }
       });
   }

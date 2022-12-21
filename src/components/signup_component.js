@@ -17,7 +17,6 @@ export default class SignUp extends Component {
   handleSubmit(e) {
     e.preventDefault();
     const { username, email, role, password , cpassword} = this.state;
-    console.log(username, email, role, password);
     if(password && password !== cpassword){
       this.setState({ error:"Password & Confirm password does not match."})
     }else{
@@ -35,13 +34,13 @@ export default class SignUp extends Component {
         }),
       })
         .then((data) => {
-          console.log(data)
+          console.log(data,'---------------------')
           if(data.status == 400){
             this.setState({ error:data.message})
           }
           if(data.status == 200) {
             alert("Register successful");
-            window.location.href = "./sign-in";
+            window.location.href = "./";
           } 
         });
     }
@@ -52,9 +51,6 @@ export default class SignUp extends Component {
       <div className="auth-inner">
       <form onSubmit={this.handleSubmit}>
         <h3>Sign Up</h3>
-        <h6 style={{margin:"3px", color:"red"}}>
-          {this.state.error}
-        </h6>
         <div className="mb-3">
           <label>Username</label>
           <input
@@ -109,6 +105,9 @@ export default class SignUp extends Component {
             onChange={(e) => this.setState({cpassword: e.target.value })}
             required="true"
           />
+          <p style={{margin:"3px", color:"red"}}>
+          {this.state.error}
+        </p>
         </div>
         <div className="d-grid">
           <button type="submit" className="btn" style={{backgroundColor:"#3DED97",fontWeight:"bold" , color:"white"}}>
@@ -116,7 +115,7 @@ export default class SignUp extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered <a href="/">sign in?</a>
         </p>
       </form>
       </div>

@@ -6,15 +6,17 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./components/login_component";
 import SignUp from "./components/signup_component";
 import Profile from "./components/profile";
-import Dashboard from "./components/dashboard"
+import StudentDashboard from "./components/studentDashboard"
+import AluminiDashboard from "./components/aluminiDashboard"
 
 function App() {
   return (
     <Router>
       <div className="App">
             <Routes>
-              <Route exact path="/" element={<Dashboard />} />
-              <Route path="/sign-in" element={<Login />} />
+              <Route exact path="/student-dashboard" element={<StudentDashboard />} />
+              <Route exact path="/alumini-dashboard" element={<AluminiDashboard />} />
+              <Route path="/" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/profile" element={<Profile />} />
             </Routes>

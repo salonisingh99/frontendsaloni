@@ -62,7 +62,7 @@
 <a href="/page/recent/" class="header_a" data-label="Recent wallpapers">Recent</a>
 <a href="/page/trending/" class="header_a" data-label="Trending wallpapers">Trending</a>
 <span class="join_wrapper">
-<a href="/page/sign-in/" class="header_a">Login</a>
+<a href="/page/" class="header_a">Login</a>
 <a href="/page/sign-up/" class="btn btn-outline-orange btn-join">Join</a>
 </span>
 </span>
